@@ -10,13 +10,28 @@ as much as possible.
 
 Download Vicon Datastream SDK [here](https://www.vicon.com/downloads/utilities-and-sdk/datastream-sdk).
 
-Put the .cpp and .h in pyvicon folder.
-Put the library (.so) somewhere accessible for your os (ex: /usr/local/lib).
+put 
+    ViconDataStreamSDK_CPPTest.cpp, 
+    DataStreamClient.h,
+    libboost_system-mt.so.1.58.0
+    libboost_thread-mt.so.1.58.0
+    libViconDataStreamSDK_CPP.so
+in the same folder (pyvicon) where pyvicon.cpp and pyvicon.py 
+#Put the .cpp and .h in pyvicon folder.
+#Put the library (.so) somewhere accessible for your os #(ex: /usr/local/lib).
 
 ### Install
 ```
 sudo python3 setup.py install
+
+correct the path in the loadLib.sh to the folder where you added the Vicon SDK libraries.
 ```
+### Test
+run
+. loadLib.sh
+python3 getViconData.py
+
+you should see the latency now.
 
 ### TODO
 - Implement less "popular" functions
